@@ -1,3 +1,8 @@
+import { env } from 'node:process';
+if (env['NODE_ENV'] !== 'production') {
+  env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'; // dev only
+}
+
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
